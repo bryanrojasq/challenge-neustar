@@ -66,7 +66,9 @@
         </div><!-- ctrl -->
 
         <div class="result">
-
+            <p style="text-align: center;">
+                <a href="/?show_latest=true">Show latest records</a>
+            </p>
             <table>
                 <thead>
                     <tr>

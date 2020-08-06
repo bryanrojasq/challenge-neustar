@@ -61,6 +61,14 @@ Create unit test(s).
 
 [http://neustar.dev/](http://neustar.dev/)
 
+### Other commands
+
+`./vendor/bin/phpunit tests`
+
+`./vendor/bin/phpunit --testdox tests`
+
+`composer dump-autoload`
+
 ## Documentation
 
 * tool: [VM Box - box.scotch.io](https://box.scotch.io)
