@@ -34,21 +34,31 @@ Create unit test(s).
 
 ## Installation
 1. **Set VM environment**
+
 [Install Virtualbox](https://www.virtualbox.org/)
+
 [Install Vagrant](https://www.vagrantup.com/downloads)
 
 2. **Get the code running**
+
 `git clone https://github.com/bryanrojasq/challenge-neustar.git` 
+
 `cd challenge-neustar`
+
 `vagrant up`
 
 3. **Your app is now running at**
+
 [http://192.168.33.10/](http://192.168.33.10/)
 
 4. **Optional - Do you want custom URL?**
+
 `vagrant suspend`
+
 `echo '192.168.33.10 neustar.dev' | sudo tee -a /etc/hosts`
+
 `vagrant up`
+
 [http://neustar.dev/](http://neustar.dev/)
 
 ## Documentation

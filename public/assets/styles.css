@@ -14,15 +14,6 @@ body {
   padding-bottom: 60px;
 }
 
-#custom-search {
-  /* background: black;
-            color: white;
-            text-align: center;
-            margin: 20px 0;
-            padding: 50px 0; */
-  /* border: var(--black) dotted 1px; */
-}
-
 #custom-search .ctrl {
   background: var(--grey);
   color: white;
@@ -41,15 +32,6 @@ body {
 #custom-search form {
   width: 100%;
 }
-
-/* #custom-search input {
-  color: black;
-  width: 100%;
-  height: 30px;
-  border: 0;
-  border-radius: 3px;
-  text-indent: 27px;
-} */
 
 #custom-search input[type="submit"] {
   position: absolute;

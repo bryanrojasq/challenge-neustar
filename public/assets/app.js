@@ -1,6 +1,4 @@
 (function () {
-  var tbody = $(".result table tbody");
-  var loading = $(".loading");
 
   var settings = {
     whitelist: [111, 222, 333, 555],
@@ -17,7 +15,10 @@
     DNSLookupService.call($q);
   });
 
-  // Service
+  var tbody = $(".result table tbody");
+  var loading = $(".loading");
+
+  // Service: Here is the sauce
   var DNSLookupService = {
     active: false,
     call: function (data) {
@@ -27,10 +28,10 @@
       if (this.active != false) {
         this.active.abort();
       }
-      
+
       loading.fadeIn();
-      
-      $('.res-error-msg').remove();
+
+      $(".res-error-msg").remove();
 
       self.active = $.post(
         "/",
@@ -40,7 +41,9 @@
             self.active = false;
             loading.fadeOut("fast", function () {
               $(".result").append(
-                "<div class='res-error-msg'>Error: " + res.msg + "<button class='rm-err'>[x]</button></div>"
+                "<div class='res-error-msg'>Error: " +
+                  res.msg +
+                  "<button class='rm-err'>[x]</button></div>"
               );
             });
             return;
@@ -63,8 +66,9 @@
       //  $.post
     },
   };
-    // Forgive me, Lord! :3
-    $(document).on('click','.rm-err', function(){
-        $(this).parent().remove();
-    });
+
+  // Forgive me, Lord! :3
+  $(document).on("click", ".rm-err", function () {
+    $(this).parent().remove();
+  });
 })();

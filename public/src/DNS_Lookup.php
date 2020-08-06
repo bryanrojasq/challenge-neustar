@@ -12,6 +12,7 @@ final class DNS_Lookup
 
     public function getData()
     {
+        // TODO:
         // add sqlite, create db, create tb, select, insert
         // $db_tbl = \DB\SQlite\Domain_DNS();
         // $db_tbl->save($dns); # if not exist then insert
