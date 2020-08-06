@@ -1,6 +1,9 @@
 <?php declare (strict_types = 1);
 namespace Ctrl;
 
+require_once 'db/SQLiteConn.php';
+use \DB\SQLiteConn;
+
 final class DNS_Lookup
 {
     private $form_data;
@@ -12,16 +15,14 @@ final class DNS_Lookup
 
     public function getData()
     {
-        // TODO:
-        // add sqlite, create db, create tb, select, insert
-        // $db_tbl = \DB\SQlite\Domain_DNS();
-        // $db_tbl->save($dns); # if not exist then insert
         foreach (json_decode($this->form_data) as $domain) {
 
             if (self::isValidDomain($domain->value)) {
                 $dns_data = dns_get_record($domain->value, DNS_A);
                 if ($dns_data) {
                     $dns_records[] = $dns_data[0];
+                    $pdo = ($db_handler = new \DB\SQLiteConn)->start();
+                    $db_handler->is_new_insert($dns_data[0]);
                 }
             }
         }

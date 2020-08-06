@@ -103,7 +103,8 @@ header h1 {
   margin-bottom: 20px;
 }
 
-.result table {
+.result table,
+.tbl {
   border-color: var(--green);
   border: 5px solid var(--green);
   margin: 0 auto;
@@ -114,10 +115,13 @@ header h1 {
 }
 
 .result table th, 
-.result table td {
+.result table td,
+.tbl th, 
+.tbl td  {
     padding: 5px;
 }
-.result table tr:nth-child(even) {
+.result table tr:nth-child(even),
+.tbl tr:nth-child(even) {
     background: var(--grey);
 }
 

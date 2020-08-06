@@ -9,7 +9,10 @@
     "autoload": {
         "classmap": [
             "src/"
-        ]
+        ],
+        "psr-4": {
+            "DB\\": "db/"
+        }
     },
     "require": {},
     "require-dev": {
