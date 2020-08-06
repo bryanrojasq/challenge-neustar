@@ -1,320 +1,218 @@
-        /* .tags-look .tagify__dropdown__item {
-            display: inline-block;
-            border-radius: 3px;
-            padding: .3em .5em;
-            border: 1px solid #CCC;
-            background: #F3F3F3;
-            margin: .2em;
-            font-size: .85em;
-            color: black;
-            transition: 0s;
-        }
+:root {
+  /* palette: --black: #333e48; --yellow: #fddc27; --green: #05cc7a; --blue: #bf41af; --grey: #dfdfdf; */
+  --black: #333e48;
+  --yellow: #fddc27;
+  --green: #05cc7a;
+  --blue: #bf41af;
+  --grey: #dfdfdf;
+}
 
-        .tags-look .tagify__dropdown__item--active {
-            color: black;
-        }
+body {
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  padding-bottom: 60px;
+}
 
-        .tags-look .tagify__dropdown__item:hover {
-            background: lightyellow;
-            border-color: gold;
-        } */
-
-        .tagify__input::before {
-
-        }
-
-        /* palette: --black: #333e48; --yellow: #fddc27; --green: #05cc7a; --blue: #bf41af; --grey: #dfdfdf; */
-        :root {
-            --black: #333e48;
-            --yellow: #fddc27;
-            --green: #05cc7a;
-            --blue: #bf41af;
-            --grey: #dfdfdf;
-        }
-
-        body {
-            color: var(--black);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1em;
-        }
-
-        #custom-search {
-            /* background: black;
+#custom-search {
+  /* background: black;
             color: white;
             text-align: center;
             margin: 20px 0;
             padding: 50px 0; */
-            /* border: var(--black) dotted 1px; */
-        }
+  /* border: var(--black) dotted 1px; */
+}
 
-        #custom-search .ctrl {
-            background: var(--grey);
-            color: white;
-            /*text-align: center;*/
-            margin: 20px 0;
-            padding: 20px 20px;
-        }
+#custom-search .ctrl {
+  background: var(--grey);
+  color: white;
+  /*text-align: center;*/
+  margin: 20px 0;
+  padding: 20px 20px;
+}
 
-        .ctrl .row {
-            display: flex;
+.ctrl .row {
+  display: flex;
 
-            margin: 0 auto;
-            position: relative;
-        }
+  margin: 0 auto;
+  position: relative;
+}
 
-        #custom-search form {
-            width: 100%;
-        }
+#custom-search form {
+  width: 100%;
+}
 
-        #custom-search input {
-            /* color: black;
-            width: 100%;
-            height: 30px;
-            border: 0;
-            border-radius: 3px;
-            text-indent: 27px; */
-        }
+/* #custom-search input {
+  color: black;
+  width: 100%;
+  height: 30px;
+  border: 0;
+  border-radius: 3px;
+  text-indent: 27px;
+} */
 
-        #custom-search button {
-            color: black;
-            border: black;
-        }
+#custom-search input[type="submit"] {
+  position: absolute;
+  right: 0;
+  height: 38px;
 
-        #custom-search svg {
-            z-index: 1;
-            position: absolute;
-            top: 50%;
-            left: 3px;
-            width: 18px;
-            height: 18px;
-            fill: rgba(0, 0, 0, .6);
-            -webkit-transition: all .3s;
-            transition: all .3s;
+  color: white;
+  background-color: var(--blue);
+  border: none;
+}
 
-            transform: translateY(-50%);
-        }
+#custom-search svg {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  fill: rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 
-        #custom-search svg:last-of-type {
-            left: auto;
-            right: 3px;
-            width: 18px;
-            height: 18px;
-        }
+  transform: translateY(-50%);
+}
 
-        #suggestions {
-            /*border: 1px solid transparent;*/
-            box-shadow: 0px 6px 12px grey;
-            background: rgba(255, 255, 255, .75);
-            /*padding: 20px;*/
-            list-style: none;
-            padding: 0;
-            /*border-bottom-right-radius: 3px;
-            border-bottom-left-radius: 3px;*/
-            border-radius: 3px;
+.tagify {
+  padding: 0 21px;
+  width: calc(100% - 18px);
+  color: var(--black);
 
-            width: 100%;
-            position: absolute;
-            top: 32px;
-        }
-
-        #suggestions a {
-            cursor: pointer;
-            color: black;
-            display: block;
-            padding: 12px 0;
-            border: 1px solid transparent;
-        }
-
-        #suggestions a:hover {
-            border-radius: 3px;
-            border-bottom: 1px solid lightgrey;
-            border-top: 1px solid lightgrey;
-            box-shadow: 0px -1px 7px lightgrey;
-            background: rgba(255, 255, 255, 0.6);
-        }
-
-        body {
-            /*padding-top: 60px;*/
-            padding-bottom: 60px;
-        }
+  --tags-focus-border-color: var(--blue);
+  --tags-border-color: var(--tags-hover-border-color);
+}
 
 
-        @media screen and (min-width: 767px) {
-            .main {
-                display: flex;
-            }
+@media screen and (min-width: 767px) {
+  .main {
+    display: flex;
+  }
 
-            .main ul {
-                flex-grow: 2;
-            }
+  .main ul {
+    flex-grow: 2;
+  }
 
-            .main aside {
-                flex-grow: 1;
-            }
+  .main aside {
+    flex-grow: 1;
+  }
 
-            .ctrl .row {
-                /*width: 320px;*/
-            }
-        }
+  #custom-search form {
+    width: 967px;
+  }
+}
 
-        #subscribe {
-            border: 1px solid grey;
-            background: lightgrey;
-            padding: 20px;
-            display: flex;
+header {
+  padding: 20px;
+}
 
-            position: relative;
-        }
+header svg {
+  width: 120px;
+}
 
-        #subscribe .error-mgs {
-            position: absolute;
+header h1 {
+  display: inline-block;
+  margin: 0;
+}
 
-            /* IE & FireFox */
-            animation: slideRight 1s;
-            /* Chrome, Safari & Opera */
-            -webkit-animation: slideRight 1s;
+.result {
+  overflow-x: scroll;
+  margin-bottom: 20px;
+}
 
-            animation-fill-mode: forwards;
+.result table {
+  border-color: var(--green);
+  border: 5px solid var(--green);
+  margin: 0 auto;
+  width: 100%;
 
-            top: 50%;
-            transform: translateY(-50%);
-        }
+  max-width: 967px;
+  min-width: 320px;
+}
 
-        /* IE & FireFox */
-        @keyframes slideRight {
-            from {
-                right: -100%;
-            }
+.result table th, 
+.result table td {
+    padding: 5px;
+}
+.result table tr:nth-child(even) {
+    background: var(--grey);
+}
 
-            to {
-                right: 0;
-            }
-        }
+.loading {
+  text-align: center;
+  display: none;
+}
 
-        /* Chrome, Safari & Opera */
-        @-webkit-keyframes slideRight {
-            from {
-                right: -100%;
-            }
+.loading span {
+  display: inline-block;
+}
 
-            to {
-                right: 0;
-            }
-        }
+/* Helper: spinner */
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
 
-        .bi-hourglass-split {
-            animation-name: spin;
-            animation-duration: 3s;
-            /*https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_speed*/
-            animation-timing-function: linear;
-            /*animation-delay: 4s;*/
-            animation-iteration-count: infinite;
-            /*animation-direction: alternate;*/
-            animation-fill-mode: forwards;
-            /*animation: spin 3s ease-in-out 2s infinite alternate;*/
-        }
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: var(--black);
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
 
-        @keyframes spin {
-            0% {
-                -webkit-transform: rotate(0);
-                transform: rotate(0);
-            }
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
 
-            60%,
-            100% {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-                color: coral;
-            }
-        }
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
 
-        header {
-            padding: 20px;
-        }
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
 
-        header svg {
-            width: 120px;
-        }
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
 
-        header h1 {
-            display: inline-block;
-            margin: 0;
-        }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
 
-        .result {
-            overflow-x: scroll;
-            margin-bottom: 20px;
-        }
+footer {
+  background: var(--yellow);
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
-        .result table {
-            border-color: var(--green);
-            border: 5px solid var(--green);
-            margin: 0 auto;
-            width: 100%;
+.res-error-msg {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  background: var(--blue);
+  color: white;
+  padding: 20px;
+  top: 0;
+}
 
-            max-width: 967px;
-            min-width: 320px;
-        }
-
-        .loading {
-            text-align: center;
-            display: none;
-        }
-
-        .loading span {
-            display: inline-block;
-        }
-
-
-        /* Helper: spinner */
-        .lds-facebook {
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 80px;
-        }
-
-        .lds-facebook div {
-            display: inline-block;
-            position: absolute;
-            left: 8px;
-            width: 16px;
-            background: var(--black);
-            animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-        }
-
-        .lds-facebook div:nth-child(1) {
-            left: 8px;
-            animation-delay: -0.24s;
-        }
-
-        .lds-facebook div:nth-child(2) {
-            left: 32px;
-            animation-delay: -0.12s;
-        }
-
-        .lds-facebook div:nth-child(3) {
-            left: 56px;
-            animation-delay: 0;
-        }
-
-        @keyframes lds-facebook {
-            0% {
-                top: 8px;
-                height: 64px;
-            }
-
-            50%,
-            100% {
-                top: 24px;
-                height: 32px;
-            }
-        }
-
-        footer {
-            background: var(--yellow);
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+.res-error-msg button {
+    right: 80px;
+    position: absolute;
+    border: 1px solid transparent;
+}

@@ -51,8 +51,7 @@
     <section id="custom-search">
 
         <div class="ctrl">
-
-            <div class="row">
+            <form action="/" id="finder" class="row">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -60,33 +59,14 @@
                     <path fill-rule="evenodd"
                         d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
                 </svg>
-
-                <form action="/" id="finder-songs">
-                    <input type="text" placeholder="What domain are you looking for?" name="q" autocomplete="off"
-                        value="">
-                    <!-- <ul id="suggestions">
-                        <li><a href="#1" data-option="key-1">Tip 1</a></li>
-                        <li><a href="#2" data-option="key-2">Tip 2</a></li>
-                        <li><a href="#3" data-option="key-3">Tip 3</a></li>
-                        <div id="tmpl-component-2"></div>
-                    </ul> -->
-                    <input type="submit" value='enviar'>
-                </form>
-
-                <svg id="form-reset" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path fill-rule="evenodd"
-                        d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z" />
-                    <path fill-rule="evenodd"
-                        d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z" />
-                </svg>
-            </div>
+                <input type="text" placeholder="What domain are you looking for?" name="q" autocomplete="off"
+                    value="">
+                <input type="submit" value='GO'>
+            </form>
         </div><!-- ctrl -->
 
         <div class="result">
-            
+
             <table>
                 <thead>
                     <tr>
@@ -98,7 +78,7 @@
                 </thead>
                 <tbody></tbody>
             </table>
-            
+
             <div class="loading">
                 <!-- <span>loading</span> -->
                 <div class="lds-facebook">
@@ -115,7 +95,7 @@
 
     <footer>
         <section id="copy">
-            By Bryan Rojas
+            With 💖 by BrianBrain ✨
         </section>
     </footer>
 

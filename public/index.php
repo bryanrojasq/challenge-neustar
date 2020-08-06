@@ -1,26 +1,23 @@
 <?php
 
+require_once 'utils/helpers.php';
 
-$is_ajax = 'xmlhttprequest' == strtolower($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '');
-
-if($is_ajax) {
+if (is_ajax_call()) {
     
     // print_r(dns_get_record('google.com'));
-    
-    foreach (json_decode($_POST['form_data']) as $domain) {
-        
-        if( dns_get_record($domain->value, DNS_A) ) {
-            $dns_records[] = dns_get_record($domain->value, DNS_A)[0];
-        }
 
-        // add sqlite, create db, create tb, select, insert
-        // $db_tbl = \DB\SQlite\Domain_DNS();
-        // $db_tbl->save($dns); # if not exist then insert
+    if (empty($_POST['form_data'])) {
+        print json_encode(['msg' => 'Empty input', 'status' => 'error']);
+        die();
     }
+
     sleep(1);
-    print json_encode($dns_records?? []);
+    
+    require_once 'src/DNS_Lookup.php';
+    print (new Ctrl\DNS_Lookup($_POST['form_data']))->getData();
 
 } else {
 
-    require_once 'dashboard.php';
+    // require_once 'views/layout.php';
+    load_view('views/layout');
 }
